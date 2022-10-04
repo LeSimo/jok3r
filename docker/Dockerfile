@@ -27,16 +27,16 @@ RUN apt-get update && \
     echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen && \
     echo "gem: --no-rdoc --no-ri" >> /root/.gemrc && \
     echo 'jok3r() { python3 ~/jok3r/jok3r.py "$@"; }' >> /root/.bashrc && \
-    git clone https://github.com/koutto/jok3r.git 
+    git clone https://github.com/LeSimo/jok3r.git 
 
 # Add Sublime text for convenience for editing files if necessary
 # Will require to run with the following arguments to use GUI
 # sudo docker run -i -t -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix koutto/jok3r
 # and on host: xhost +
 RUN wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | apt-key add - && \
-	apt-get install -y apt-transport-https && \
-	echo "deb https://download.sublimetext.com/ apt/stable/" | tee /etc/apt/sources.list.d/sublime-text.list && \
-	apt-get update && \
+    apt-get install -y apt-transport-https && \
+    echo "deb https://download.sublimetext.com/ apt/stable/" | tee /etc/apt/sources.list.d/sublime-text.list && \
+    apt-get update && \
     apt-get install -y sublime-text && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
