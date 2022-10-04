@@ -1,5 +1,5 @@
 # FROM debian:buster-slim
-FROM kalilinux/kali-latest-release
+FROM kalilinux/kali-last-release
 LABEL maintainer="xst3nz@gmail.com"
 LABEL maintainer="pentux@protonmail.com"
 
