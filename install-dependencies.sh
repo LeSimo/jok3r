@@ -253,7 +253,8 @@ for package in $PACKAGES; do
     fi
 done
 
-pip2 install --upgrade pip
+#Removing pip2 for problem during build
+#pip2 install --upgrade pip
 pip3 install --upgrade pip
 # pip3 uninstall -y psycopg2
 # pip3 install psycopg2-binary
@@ -269,12 +270,13 @@ else
     print_red "[!] An error occured during Python2.7 install"
     exit 1
 fi 
-if [ -x "$(command -v pip2)" ]; then
-    print_green "[+] pip2 installed successfully"
-else
-    print_red "[!] An error occured during pip2 install"
-    exit 1
-fi 
+#Removing controls for pip2
+# if [ -x "$(command -v pip2)" ]; then
+#     print_green "[+] pip2 installed successfully"
+# else
+#     print_red "[!] An error occured during pip2 install"
+#     exit 1
+# fi 
 if [ -x "$(command -v pip3)" ]; then
     print_green "[+] pip3 installed successfully"
 else
